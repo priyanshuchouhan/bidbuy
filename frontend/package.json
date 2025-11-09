@@ -71,5 +71,23 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.7.2"
+  },
+  {
+  "version": 2,
+  "builds": [
+    { "src": "frontend/package.json", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "frontend/$1" }
+  ]
+  },
+ {
+  "version": 2,
+  "builds": [
+    { "src": "frontend/package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "frontend/build/$1" }
+  ]
   }
 }
